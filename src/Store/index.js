@@ -1,6 +1,6 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import { setupListeners } from '@reduxjs/toolkit/query';
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import { configureStore, combineReducers } from '@reduxjs/toolkit'
+import { setupListeners } from '@reduxjs/toolkit/query'
 import {
   persistReducer,
   persistStore,
@@ -10,28 +10,28 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from 'redux-persist';
-import theme from './Theme';
-import allreducers from './reducers';
-import { api } from '../Services/api';
+} from 'redux-persist'
+import theme from './Theme'
+import allreducers from './reducers'
+import { api } from '../Services/api'
 
 const reducers = combineReducers({
   theme,
   api: api.reducer,
   ...allreducers,
-});
+})
 const rootReducer = (state, action) => {
-  let newState = state;
-  return reducers(newState, action);
-};
+  let newState = state
+  return reducers(newState, action)
+}
 
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
   whitelist: ['theme'],
-};
+}
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 const store = configureStore({
   reducer: persistedReducer,
@@ -47,7 +47,7 @@ const store = configureStore({
           REGISTER,
         ],
       },
-    }).concat(api.middleware);
+    }).concat(api.middleware)
 
     // if (__DEV__ && !process.env.JEST_WORKER_ID) {
     //   const createDebugger = require('redux-flipper').default
@@ -55,12 +55,12 @@ const store = configureStore({
     // }
 
     // return composeWithDevTools(middlewares)
-    return middlewares;
+    return middlewares
   },
-});
+})
 
-const persistor = persistStore(store);
+const persistor = persistStore(store)
 
-setupListeners(store.dispatch);
+setupListeners(store.dispatch)
 
-export { store, persistor };
+export { store, persistor }

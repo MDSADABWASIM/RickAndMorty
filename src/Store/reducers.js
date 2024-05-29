@@ -1,7 +1,7 @@
-import { UserReducer } from './slices/User';
+import { UserReducer } from './slices/User'
 
 const reducers = {
   User: UserReducer,
-};
+}
 
-export default reducers;
+export default reducers

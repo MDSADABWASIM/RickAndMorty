@@ -5,7 +5,7 @@
 export default function () {
   return {
     logo: {
-      uri: 'https://thecodingmachine.github.io/react-native-pilotplans/img/TOM-small.png',
+      uri: 'https://pngtree.com/freepng/app-icon-isolated-on-abstract-background_5165788.html',
     },
   }
 }

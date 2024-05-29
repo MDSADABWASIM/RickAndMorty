@@ -1,13 +1,13 @@
-import React from 'react';
-import { StatusBar, Platform } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
-import { navigationRef } from './navUtils';
-import Home from '../Components/Home';
-import Details from '../Components/Details';
+import React from 'react'
+import { StatusBar, Platform } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { createStackNavigator } from '@react-navigation/stack'
+import { NavigationContainer } from '@react-navigation/native'
+import { navigationRef } from './navUtils'
+import Home from '../Components/Home'
+import Details from '../Components/Details'
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator()
 
 // @refresh reset
 const ApplicationNavigator = () => {
@@ -43,7 +43,7 @@ const ApplicationNavigator = () => {
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
-  );
-};
+  )
+}
 
-export default ApplicationNavigator;
+export default ApplicationNavigator
